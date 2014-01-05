@@ -1,0 +1,6 @@
+start on runlevel [345]
+stop on runlevel [S016]
+
+respawn
+instance /dev/ttyS1
+exec /sbin/agetty ttyS1 <%= scope.lookupvar('serialconsole::params::baud_rate') %> vt102
